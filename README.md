@@ -1,8 +1,6 @@
-### Date created
-Date Created: 1/29/2020.
+### Date created: 1/29/2020.
 
-### Project Title
-Replace the Project Title
+### Project Title: Explore US Bikeshare Data
 
 ### Description
 Describe what your project is about and what it does
