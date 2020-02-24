@@ -16,3 +16,5 @@ https://stackoverflow.com/questions/37666104/python-while-true-loop-nested-if-st
 and connect the dots to notes and lessons in Udacity.
 
 Outside of that, it was mostly just reviewing the lessons, notes and a lot of fiddling/moving indents around and messing with syntax.
+
+ALso, credit to Elvis Presley.  Dude knew a thing or two about banana and bacon sandwiches.  
