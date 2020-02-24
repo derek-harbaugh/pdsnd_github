@@ -1,13 +1,18 @@
-### Date created: 1/29/2020.
+### Date created: 
+1/29/2020.
 
-### Project Title: Explore US Bikeshare Data
+### Project Title: 
+Explore US Bikeshare Data
 
 ### Description
-Describe what your project is about and what it does
+Analyzes bikeshare data for 3 major US cities, allowing users to examine demographics and routes based on user input.
 
 ### Files used
-Include the files used
+bikeshare.py, washington.csv, new_york_city.csv, chicago.csv
 
 ### Credits
-It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
+Needed an outside refresher on how to put multiple if statements in a while loop to error proof month/day options.  I was able to infer a lot from this web page:
+https://stackoverflow.com/questions/37666104/python-while-true-loop-nested-if-statement-indentation
+and connect the dots to notes and lessons in Udacity.
 
+Outside of that, it was mostly just reviewing the lessons, notes and a lot of fiddling/moving indents around and messing with syntax.
