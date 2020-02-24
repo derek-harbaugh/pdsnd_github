@@ -1,7 +1,4 @@
-import time
-import statistics
 import pandas as pd
-import numpy as np
 
 CITY_DATA = { 'chicago': 'chicago.csv',
               'new york city': 'new_york_city.csv',
@@ -21,12 +18,12 @@ def get_filters():
         (str) day - name of the day of week to filter by, or "all" to apply no day filter
     """
     print("Lets explore US bikeshare data!")
-    # TO DO: get user input for city (chicago, new york city, washington). 
+    # TO DO: get user input for city (chicago, new york city, washington).
     city = input("\nWould you like to see data for Chicago, New York City, or Washington?\n").lower()
     # while loop to handle invalid inputs. Error message built into alternate input.
     while city not in CITY_DATA:
         city = input('\nInvalid selection. Please enter "Chicago", "New York City", or "Washington".\n').lower()
-    
+
     #While loop to handle invalid month/day inputs.
     while True:
         #Input for month/day/none selection
@@ -36,7 +33,7 @@ def get_filters():
             month = input('\nWhich month - January, February, March, April, May, or June?\n').lower()
             #Embedded while loop to handle invalid month inputs.  References earlier "months" list at the beginning of the program.
             while month not in months:
-                month = input("Invalid selection. Enter one of the following: January, February, March, April, May, or June?\n").lower() 
+                month = input("Invalid selection. Enter one of the following: January, February, March, April, May, or June?\n").lower()
             day = 'all'
             break
         #Define conditional input if user selects day
@@ -69,7 +66,7 @@ def load_data(city, month, day):
     Returns:
         df - Pandas DataFrame containing city data filtered by month and day
     """
-     
+
     # load data file into a dataframe
     df = pd.read_csv(CITY_DATA[city])
 
@@ -85,10 +82,10 @@ def load_data(city, month, day):
     if month != 'all':
         # use the index of the months list to get the corresponding int
         month = months.index(month) +1
-    
+
         # filter by month to create the new dataframe
         df = df[df['month'] == month]
- 
+
 
     # filter by day of week if applicable
     if day != 'all':
@@ -171,24 +168,24 @@ def trip_duration_stats(df):
 
 def user_stats(df):
     """Displays statistics on bikeshare users."""
-    
+
     print('\nCalculating User Stats...\n')
     start_time = time.time()
-    
+
     # Display counts of user types
     user_types = df['User Type'].value_counts()
     print('\nCount of User Types:\n', user_types)
 
- # Display counts of gender.  Because Washington DC doesn't have gender data, code is enclosed in a try so that it can handle the key error and skip this code when we look up stats on Washington. 
+ # Display counts of gender.  Because Washington DC doesn't have gender data, code is enclosed in a try so that it can handle the key error and skip this code when we look up stats on Washington.
     try:
         gender_count = df.groupby(['Gender'])['Gender'].count()
     except KeyError:
         print("\nNo gender data available for Washington\n")
     else:
         print("\nGender Demographics:\n", gender_count)
-        
-    
-        
+
+
+
 # Display earliest, most recent, and most common year of birth.  Using Try because Washington doesn't have birth year data and I want to skip this code if we are looking up Washington
 
     try:
@@ -211,15 +208,15 @@ def raw_data(df):
     if data != 'yes':
         print("skipping raw data display.")
     else:
-        while True:      
+        while True:
             window = df[(i * 5):5 +(i * 5)]
             print(window)
             i += 1
             re_raw = input("\nWould you like to see the next 5 rows of raw data?\n")
             if re_raw.lower() != 'yes':
                 break
-    
-    
+
+
 
 def main():
     #allow the user to re-run or exit if they so choose.
